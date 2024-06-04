@@ -1,6 +1,7 @@
 import  Express  from "express";
 import cors from "cors"
 import orders from "./data/OrderHeader.js";
+import productData from "./data/Products.js";
 
 const app=Express();
 app.use(cors())
@@ -20,6 +21,14 @@ app.post('/api/orders/headers',async (req,res) =>{
     const requestbody= await req.body;
     const userId=requestbody.userId;
     const responseBody=orders.filter((order)=> order.userId==userId) ;
+    res.status(200).json(responseBody)
+
+})
+
+app.post('/api/products',async (req,res) =>{
+    const requestbody= await req.body;
+    const userId=requestbody.userId;
+    const responseBody=productData ;
     res.status(200).json(responseBody)
 
 })

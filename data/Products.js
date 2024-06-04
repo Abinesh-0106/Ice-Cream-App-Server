@@ -571,5 +571,5 @@ let productData=[
       price: '28.63'
     }
   ];
-console.log(JSON.stringify(productData))
+
   export default productData;
